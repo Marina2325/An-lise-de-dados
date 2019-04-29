@@ -4,7 +4,7 @@ require(tidyverse)
 library(tidyverse)
 library(ff)
 library(ffbase)
-# Quest„o 2
+# Quest√£o 2
 
 setwd("C:/Users/Lucas Albuquerque/Downloads/dados_encontro_2_ufpe/dados_encontro_2_ufpe")
 load('docentes_pe_censo_escolar_2016.RData')
@@ -28,18 +28,18 @@ agregado_doc <- aggregate(NU_DOC~CO_MUNICIPIO, data = docentes_pe_selecao, sum)
 matricula_docentes <- merge(agregado_doc, agregado_matr)
 matricula_docentes$mat_por_docente <- (agregado_matr$NU_MAT/agregado_doc$NU_DOC)
 names(IDHm_pe)[4]<- 'CO_MUNICIPIO'
-#estatÌsticas descritivas
+#estat√≠sticas descritivas
 summary(matricula_docentes$mat_por_docente)
 
 #unir bancos
 merge(matricula_docentes, IDHm_pe, by = 'CO_MUNICIPIO')
 
-## municipio com maior n˙mero de matrÌculas por docente
-# TUPANATINGA - 9.6 matrÌculas por docente
+## municipio com maior n√∫mero de matr√≠culas por docente
+# TUPANATINGA - 9.6 matr√≠culas por docente
 # IDHM = 0.519 
 
 cor(matricula_docentes$mat_por_docente, IDHm_pe$IDHM, method = 'pearson')
 
-# Quest„o 3 
-# Gr·fico N˙mero de alunos por docente x IDHM
+# Quest√£o 3 
+# Gr√°fico N√∫mero de alunos por docente x IDHM
 ggplot(matricula_docentes$mat_por_docente, IDHm_pe$IDHM, aes(x = matricula_docentes$mat_por_docente,y = matricula_docentes$IDHM))
