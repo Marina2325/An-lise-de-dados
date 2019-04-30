@@ -1,6 +1,6 @@
-# Lista 3 - An·lise de dados (Marina laporte Cotias)
+# Lista 3 - An√°lise de dados (Marina laporte Cotias)
 
-## Quest„o 2 
+## Quest√£o 2 
 
 x <- 2 
 
@@ -11,7 +11,7 @@ z <- x + y
 z*11222936402
 #Resposta: 67337618412
 
-## Quest„o 3 
+## Quest√£o 3 
 
 install.packages("ffbase", dependencies = TRUE)
 install.packages("ff")
@@ -31,11 +31,11 @@ mtcars$cyl[4]
 
 summary(mtcars)
 
-## Quest„o 4 
+## Quest√£o 4 
 
-# modificar o diretÛrio (caminho da pasta onde t„o os arquivos)
+# modificar o diret√≥rio (caminho da pasta onde t√£o os arquivos)
 
-setwd("C:/Users/usuario/Desktop/An·lise de Dados 2019")
+setwd("C:/Users/usuario/Desktop/An√°lise de Dados 2019")
 
 # carregar Turmas_1
 
@@ -53,18 +53,18 @@ turmas_pe <- subset(Turmas_1, Turmas_1$CO_UF == "26")
 
 save(turmas_pe, file = "turmas_pe.RData")
 
-## Quest„o 5 
+## Quest√£o 5 
 
-setwd("C:/Users/usuario/Desktop/An·lise de Dados 2019")
+setwd("C:/Users/usuario/Desktop/An√°lise de Dados 2019")
 
 load("turmas_pe.RData")
 
-# MÈdia do n˙mero de matrÌcula por turmas 
+# M√©dia do n√∫mero de matr√≠cula por turmas 
 
 mean(turmas_pe$NU_MATRICULAS)
 # Resultado: 23.07089
 
-## Quest„o 6 
+## Quest√£o 6 
 
 # carregar DOCENTES_NORDESTE
 docentes_ne <- read.csv2.ffdf(file = 'DOCENTES_NORDESTE.csv', sep = '|', first.rows = 100000)
@@ -75,6 +75,6 @@ docentes_PE <- subset(docentes_ne, CO_UF == '26')
 # transformar em tabela
 tabela_docentes <- table(docentes_PE$TP_COR_RACA)
 
-# Percentual de docentes de PE que n„o declararam raÁa (0)/ que se declararam pretos e pardos (2 e 3)
+# Percentual de docentes de PE que n√£o declararam ra√ßa (0)/ que se declararam pretos e pardos (2 e 3)
 prop.table(tabela_docentes)
-# Resultado: 44% n„o declararam cor/raÁa e 31,36409% se declararam preto ou pardo 
+# Resultado: 44% n√£o declararam cor/ra√ßa e 31,36409% se declararam preto ou pardo 
